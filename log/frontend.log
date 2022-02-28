@@ -2010,3 +2010,18 @@ org.springframework.web.client.HttpClientErrorException$NotFound: 404 : "{"times
 2022-02-28 11:22:35.612  INFO 25592 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-02-28 11:22:35.613  INFO 25592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2022-02-28 11:22:35.613  INFO 25592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-02-28 11:28:04.632  INFO 11944 --- [restartedMain] com.zuzun.InnoBankFrontEndApplication    : Starting InnoBankFrontEndApplication using Java 11.0.13 on KAFEIN with PID 11944 (C:\Users\Kafein\Desktop\github-zuzun\InnoBankFrontEnd\target\classes started by Kafein in C:\Users\Kafein\Desktop\github-zuzun\InnoBankFrontEnd)
+2022-02-28 11:28:04.632  INFO 11944 --- [restartedMain] com.zuzun.InnoBankFrontEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2022-02-28 11:28:04.663  INFO 11944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-28 11:28:04.663  INFO 11944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-28 11:28:05.318  INFO 11944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-02-28 11:28:05.334  INFO 11944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-28 11:28:05.334  INFO 11944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-02-28 11:28:05.379  INFO 11944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-28 11:28:05.379  INFO 11944 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 716 ms
+2022-02-28 11:28:05.650  INFO 11944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-28 11:28:05.666  INFO 11944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-02-28 11:28:05.681  INFO 11944 --- [restartedMain] com.zuzun.InnoBankFrontEndApplication    : Started InnoBankFrontEndApplication in 1.379 seconds (JVM running for 2.289)
+2022-02-28 11:28:56.661  INFO 11944 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-28 11:28:56.662  INFO 11944 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-02-28 11:28:56.663  INFO 11944 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

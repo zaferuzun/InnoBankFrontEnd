@@ -50,7 +50,7 @@ public class LoansServiceImpl implements ILoansService {
                 .type(createLoansDto.getType())
                 .accountId(accountId)
                 .build();
-        LoansDto responseLoans = restTemplate.postForObject(baseUrl+"/account/save", loansDto, LoansDto.class);
+        LoansDto responseLoans = restTemplate.postForObject(baseUrl+"/loans/save", loansDto, LoansDto.class);
 
 
         return null;
