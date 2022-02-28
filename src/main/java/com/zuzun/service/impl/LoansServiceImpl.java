@@ -78,12 +78,12 @@ public class LoansServiceImpl implements ILoansService {
 
     @Override
     public AccountDto getAccountByTcNo(String tcNo) {
-        return restTemplate.postForObject(baseUrl+"/account", tcNo, AccountDto.class);
+        return restTemplate.postForObject(baseUrl+"/account?tcNo="+tcNo, tcNo, AccountDto.class);
     }
 
     @Override
     public LoansDto getLoastByAccountId(int accountId) {
-        return restTemplate.postForObject(baseUrl+"/loans", accountId, LoansDto.class);
+        return restTemplate.postForObject(baseUrl+"/loans?id="+accountId, accountId, LoansDto.class);
     }
 
 

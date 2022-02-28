@@ -24,77 +24,24 @@
             <div class="form-wrapper align-items-center">
                 <div class="form sign-in">
 
-                    <form id="loginForm" autocomplete="off" th:method="post" th:action="@{/loans}" th:object="${loans_form}">
-                        <!--name-->
-                        <div class="input-group">
-                            <i class='bx bxs-user'></i>
-                            <input autocomplete="false" th:field="*{name}" type="text" class="form-control" placeholder="name" autofocus>
-                            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
-                        </div>
-<!--surname-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{surname}" type="text" class="form-control" placeholder="surname" autofocus>
-                            <div th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
-                        </div>
+                    <form id="loginForm" autocomplete="off" th:method="post" th:action="@{/tcNo}" th:object="${tc_no}">
+
 <!--                        tcNo-->
                         <div class="input-group">
                             <i class='bx bx-mail-send'></i>
                             <input autocomplete="false" th:field="*{tcNo}" type="text" class="form-control" placeholder="tcNo" autofocus>
                             <div th:if="${#fields.hasErrors('tcNo')}" th:errors="*{tcNo}"></div>
                         </div>
-<!--                        phone-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{phone}" type="text" class="form-control" placeholder="surname" autofocus>
-                            <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
-                        </div>
-<!--                        birthday-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{birthday}" type="date" class="form-control" placeholder="birthday" autofocus>
-                            <div th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></div>
-                        </div>
-                        <!--                        salary-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{salary}" type="text" class="form-control" placeholder="salary" autofocus>
-                            <div th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div>
-                        </div>
-                        <!--                        type-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{type}" type="text" class="form-control" placeholder="type" autofocus>
-                            <div th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
-                        </div>
-                        <!--                        birthday-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{score}" type="text" class="form-control" placeholder="score" autofocus>
-                            <div th:if="${#fields.hasErrors('score')}" th:errors="*{score}"></div>
-                        </div>
-                        <!--                        birthday-->
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input autocomplete="false" th:field="*{mortgage}" type="text" class="form-control" placeholder="mortgage" autofocus>
-                            <div th:if="${#fields.hasErrors('mortgage')}" th:errors="*{mortgage}"></div>
-                        </div>
-                        <!--						<input type="submit" class="btn btn-primary" value="Sign in">-->
                         <button>
                             Sign in
                         </button>
                     </form>
-                    <p>
-                        <b>
-                            Forgot password?
-                        </b>
-                    </p>
-                    <p>
+                    <div th:object="${loans_form}">
+                        <div th:text="${name}"> </div>
 
-                        <button id="tcNoQuestioning" onclick="forwardPersonalLoans();" class="pointer">
-                            Tc ile Kredi Sorgulama
-                        </button>
-                    </p>
+
+                    </div>
+
                 </div>
             </div>
             <div class="form-wrapper">
