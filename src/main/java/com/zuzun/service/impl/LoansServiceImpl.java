@@ -55,4 +55,36 @@ public class LoansServiceImpl implements ILoansService {
 
         return null;
     }
+
+    @Override
+    public CreateLoansDto getLoansAndAccountByTcNo(String tcNo) {
+        AccountDto accountDto=getAccountByTcNo(tcNo);
+        LoansDto loansDto = getLoastByAccountId(accountDto.getId());
+
+        CreateLoansDto createLoansDto =CreateLoansDto.builder()
+                .birthday(accountDto.getBirthday())
+                .name(accountDto.getName())
+                .mortgage(loansDto.getLoansParameterModel().getMortgage())
+                .phone(accountDto.getPhone())
+                .salary(accountDto.getSalary())
+                .score(loansDto.getLoansParameterModel().getAccountScore())
+                .surname(accountDto.getSurname())
+                .tcNo(accountDto.getTcNo())
+                .type(loansDto.getType())
+                .build();
+
+        return createLoansDto;
+    }
+
+    @Override
+    public AccountDto getAccountByTcNo(String tcNo) {
+        return restTemplate.postForObject(baseUrl+"/account", tcNo, AccountDto.class);
+    }
+
+    @Override
+    public LoansDto getLoastByAccountId(int accountId) {
+        return restTemplate.postForObject(baseUrl+"/loans", accountId, LoansDto.class);
+    }
+
+
 }

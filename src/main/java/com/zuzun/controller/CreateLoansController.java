@@ -1,5 +1,6 @@
 package com.zuzun.controller;
 
+import com.zuzun.business.dto.AccountDto;
 import com.zuzun.business.dto.CreateLoansDto;
 import com.zuzun.service.ILoansService;
 import lombok.extern.log4j.Log4j2;
@@ -19,7 +20,6 @@ public class CreateLoansController {
     @Autowired
     ILoansService loansService;
 
-    //login ve register için get sayfası
     // http://localhost:8081/loans
     @GetMapping("/loans")
     public String getLoans(Model model){
@@ -38,6 +38,23 @@ public class CreateLoansController {
         loansService.sendAccountApi(createLoansDto);
         return "loans";
     }
+    // http://localhost:8081/tcNo
+    @GetMapping("/tcNo")
+    public String getLoansByTcNo(Model model){
+        model.addAttribute("tc_no", new AccountDto());
+        return "tcno";
+    }
+
+    //CreateLoansDto gösterilecek
+    // http://localhost:8081/tcNo
+    @PostMapping("/tcNo")
+    public String postLoansByTcNo(@Valid @ModelAttribute("tc_no") AccountDto accountDto, BindingResult bindingResult,Model model){
+        CreateLoansDto createLoansDto=loansService.getLoansAndAccountByTcNo(accountDto.getTcNo());
+        model.addAttribute("loans_and_account", createLoansDto);
+        return "loans-and-account";
+    }
+
+
 
 
 }
