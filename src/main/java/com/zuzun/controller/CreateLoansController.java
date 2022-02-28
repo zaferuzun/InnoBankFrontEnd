@@ -1,7 +1,9 @@
 package com.zuzun.controller;
 
 import com.zuzun.business.dto.CreateLoansDto;
+import com.zuzun.service.ILoansService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +16,8 @@ import javax.validation.Valid;
 @Controller
 @Log4j2
 public class CreateLoansController {
+    @Autowired
+    ILoansService loansService;
 
     //login ve register için get sayfası
     // http://localhost:8081/loans
@@ -31,8 +35,7 @@ public class CreateLoansController {
             log.info(createLoansDto);
             return "login";
         }
-
-        //databaseden kontrol edilecek alan
+        loansService.sendAccountApi(createLoansDto);
         return "loans";
     }
 
