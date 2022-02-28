@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html th:lang="${#locale.language}" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Thymeleaf -2 </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="container" class="container">
+    <!-- FORM SECTION -->
+    <div class="row">
+        <!-- SIGN UP -->
+        <div class="col align-items-center flex-col sign-up">
+            <div class="form-wrapper align-items-center">
+            </div>
+
+        </div>
+        <!-- END SIGN UP -->
+        <!-- SIGN IN -->
+        <div class="col align-items-center flex-col sign-in">
+            <div class="form-wrapper align-items-center">
+                <div class="form sign-in">
+
+                    <form id="loginForm" autocomplete="off" th:method="post" th:action="@{/loans}" th:object="${loans_form}">
+                        <!--name-->
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input autocomplete="false" th:field="*{name}" type="text" class="form-control" placeholder="name" autofocus>
+                            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                        </div>
+<!--surname-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{surname}" type="text" class="form-control" placeholder="surname" autofocus>
+                            <div th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+                        </div>
+<!--                        tcNo-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{tcNo}" type="text" class="form-control" placeholder="tcNo" autofocus>
+                            <div th:if="${#fields.hasErrors('tcNo')}" th:errors="*{tcNo}"></div>
+                        </div>
+<!--                        phone-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{phone}" type="text" class="form-control" placeholder="surname" autofocus>
+                            <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+                        </div>
+<!--                        birthday-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{birthday}" type="date" class="form-control" placeholder="birthday" autofocus>
+                            <div th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></div>
+                        </div>
+                        <!--                        salary-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{salary}" type="text" class="form-control" placeholder="salary" autofocus>
+                            <div th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div>
+                        </div>
+                        <!--                        type-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{type}" type="text" class="form-control" placeholder="type" autofocus>
+                            <div th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></div>
+                        </div>
+                        <!--                        birthday-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{score}" type="text" class="form-control" placeholder="score" autofocus>
+                            <div th:if="${#fields.hasErrors('score')}" th:errors="*{score}"></div>
+                        </div>
+                        <!--                        birthday-->
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input autocomplete="false" th:field="*{mortgage}" type="text" class="form-control" placeholder="mortgage" autofocus>
+                            <div th:if="${#fields.hasErrors('mortgage')}" th:errors="*{mortgage}"></div>
+                        </div>
+                        <!--						<input type="submit" class="btn btn-primary" value="Sign in">-->
+                        <button>
+                            Sign in
+                        </button>
+                    </form>
+                    <p>
+                        <b>
+                            Forgot password?
+                        </b>
+                    </p>
+                    <p>
+
+                        <b id="tcNoQuestioning" onclick="forwardPersonalLoans();" class="pointer">
+                            Tc ile Kredi Sorgulama
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div class="form-wrapper">
+
+            </div>
+        </div>
+        <!-- END SIGN IN -->
+    </div>
+    <!-- END FORM SECTION -->
+    <!-- CONTENT SECTION -->
+    <div class="row content-row">
+        <!-- SIGN IN CONTENT -->
+        <div class="col align-items-center flex-col">
+            <div class="text sign-in">
+                <h2>
+                    Hoşgeldiniz
+                </h2>
+
+            </div>
+            <div class="img sign-in">
+
+            </div>
+        </div>
+        <!-- END SIGN IN CONTENT -->
+        <!-- SIGN UP CONTENT -->
+        <div class="col align-items-center flex-col">
+            <div class="img sign-up">
+
+            </div>
+            <div class="text sign-up">
+                <h2>
+                    Join with us
+                </h2>
+
+            </div>
+        </div>
+        <!-- END SIGN UP CONTENT -->
+    </div>
+    <!-- END CONTENT SECTION -->
+</div>
+<!-- partial -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    function forwardRegister()
+    {
+        window.location.href="/questioning";
+    }
+</script>
+</body>
+</html>
