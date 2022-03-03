@@ -24,7 +24,7 @@ public class CreateLoansController {
     @GetMapping("/loans")
     public String getLoans(Model model){
         model.addAttribute("loans_form", new CreateLoansDto());
-        return "loans";
+        return "./Home/View/loans";
     }
     // http://localhost:8081/loans
     @PostMapping("/loans")
@@ -36,14 +36,14 @@ public class CreateLoansController {
             return "login";
         }
         loansService.sendAccountApi(createLoansDto);
-        return "loans";
+        return "./Home/View/loans";
     }
     // http://localhost:8081/tcNo
     @GetMapping("/tcNo")
     public String getLoansByTcNo(Model model){
         model.addAttribute("tc_no", new AccountDto());
         model.addAttribute("loans_and_account", new CreateLoansDto());
-        return "tcno";
+        return "./Home/View/tcno";
     }
 
     //CreateLoansDto gösterilecek
@@ -52,13 +52,14 @@ public class CreateLoansController {
     public String postLoansByTcNo(@Valid @ModelAttribute("tc_no") AccountDto accountDto, BindingResult bindingResult,Model model){
         CreateLoansDto createLoansDto=loansService.getLoansAndAccountByTcNo(accountDto.getTcNo());
         model.addAttribute("loans_and_account", createLoansDto);
-        return "tcno";
+        return "./Home/View/tcno";
     }
-//    @GetMapping("/loans-and-account")
-//    public String getLoansAndAccount(Model model){
-//        model.addAttribute("loans_form", new CreateLoansDto());
-//        return "loans-and-account";
-//    }
+
+    @GetMapping("/index")
+    public String getIndex(){
+        return "./Home/View/index";
+    }
+
 
 
 

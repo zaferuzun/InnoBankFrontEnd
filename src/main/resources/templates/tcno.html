@@ -36,7 +36,8 @@
                             Sign in
                         </button>
                     </form>
-                    <div th:object="${loans_form}">
+
+                    <div th:if= "${loans_form != null}" th:object="${loans_form}">
                         <div th:text="${name}"> </div>
 
 

@@ -1,0 +1,182 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<!--<html th:lang="${#locale.language}" xmlns:th="http://thymeleaf.org">-->
+<head th:replace="/Home/Layout/homefragment :: html_head (pageTitle='Index')" />
+<body>
+<div th:replace="/Home/Layout/homefragment :: preloader">
+</div>
+
+<header th:replace="/Home/Layout/homefragment :: header">
+</header>
+
+<main>
+    <!-- Header Start-->
+    <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap text-center pt-50">
+                        <h2>Loan Form</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Header End -->
+    <!-- Apply Area Start -->
+    <div class="apply-area pt-150 pb-150">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="apply-wrapper">
+                        <!-- Form -->
+                        <form id="loginForm" autocomplete="off" th:method="post" th:action="@{/tcNo}" th:object="${tc_no}">
+                            <div class="row">
+                                <!-- TC No -->
+                                <div class="col-lg-12">
+                                    <div class="single-form">
+                                        <label>* Tc No</label>
+                                        <input type="text" name="" th:field="*{tcNo}" placeholder="Enter Tc No">
+                                    </div>
+                                </div>
+                                <!-- TC No -->
+                            </div>
+                            <!-- Form btn -->
+                            <button class="btn apply-btn mt-30">
+                                APPLY NOW
+                            </button>
+
+                        </form>
+                        <!-- End From -->
+<!--                        private String name;-->
+<!--                        private String surname;-->
+<!--                        private String tcNo;-->
+<!--                        private String phone;-->
+<!--                        private String birthday;-->
+<!--                        private Long salary;-->
+<!--                        private String type;-->
+<!--                        private int score;-->
+<!--                        private double mortgage;-->
+
+                        <!--name-->
+                        <div class="row" style="padding-top: 50px;">
+                                <div class="col-lg-6">
+                                    <label>Adı: </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label th:text="${loans_and_account.name}"> </label>
+                                </div>
+                        </div>
+                        <!--name-->
+
+                        <!--surname-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Soyadı</label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.surname}"> </label>
+                            </div>
+                        </div>
+                        <!--surname-->
+
+                        <!--tcNo-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Tc No:</label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.tcNo}"> </label>
+                            </div>
+                        </div>
+                        <!--tcNo-->
+
+                        <!--phone-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Telefon: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.phone}"> </label>
+                            </div>
+                        </div>
+                        <!--phone-->
+                        <!--birthday-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Dogum günü: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.birthday}"> </label>
+                            </div>
+                        </div>
+                        <!--birthday-->
+                        <!--salary-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Maaş: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.salary}"> </label>
+                            </div>
+                        </div>
+                        <!--salary-->
+                        <!--type-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Kredi Tipi: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.type}"> </label>
+                            </div>
+                        </div>
+                        <!--type-->
+                        <!--score-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Kredi Skoru: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.score}"> </label>
+                            </div>
+                        </div>
+                        <!--score-->
+                        <!--mortgage-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Hipotek Tutarı</label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.mortgage}"> </label>
+                            </div>
+                        </div>
+                        <!--mortgage-->
+<!--                        &lt;!&ndash;surname&ndash;&gt;-->
+<!--                        <div class="row" style="padding-top: 50px;">-->
+<!--                            <div class="col-lg-6">-->
+<!--                                <label>Soyadı</label>-->
+<!--                            </div>-->
+<!--                            <div class="col-lg-6">-->
+<!--                                <label th:text="${loans_and_account.surname}"> </label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash;surname&ndash;&gt;-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Apply Area End -->
+
+</main>
+<footer th:replace="/Home/Layout/homefragment :: footer">
+</footer>
+
+<div th:replace="/Home/Layout/homefragment :: scroll-up">
+</div>
+
+<div th:replace="/Home/Layout/homefragment :: home-script">
+</div>
+</body>
+</html>

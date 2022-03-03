@@ -1,0 +1,139 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<!--<html th:lang="${#locale.language}" xmlns:th="http://thymeleaf.org">-->
+<head th:replace="/Home/Layout/homefragment :: html_head (pageTitle='Index')" />
+<body>
+<div th:replace="/Home/Layout/homefragment :: preloader">
+</div>
+
+<header th:replace="/Home/Layout/homefragment :: header">
+</header>
+
+<main>
+  <!-- Header Start-->
+  <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="hero-cap text-center pt-50">
+            <h2>Loan Form</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Header End -->
+  <!-- Apply Area Start -->
+  <div class="apply-area pt-150 pb-150">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="apply-wrapper">
+            <!-- Form -->
+            <form id="loginForm" autocomplete="off" th:method="post" th:action="@{/loans}" th:object="${loans_form}">
+              <div class="row">
+                <!-- Loans Type -->
+                <div class="col-lg-12">
+                  <div class="single-form">
+                    <label>* Kredi Tipi </label>
+                    <div class="select-option mb-10">
+                      <select name="select" id="select1"  th:field="*{type}">
+                        <option th:value="'Personal'" th:text="Bireysel"></option>
+                        <option th:value="'Car'" th:text="Araç"></option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <!-- Loans Type -->
+                <!-- First Name -->
+                <div class="col-lg-6">
+                  <div class="single-form">
+                    <label>* FIRST NAME</label>
+                    <input type="text" name="" th:field="*{name}" placeholder="Enter name">
+                  </div>
+                </div>
+                <!-- First Name -->
+                <!-- Last Name -->
+                <div class="col-lg-6">
+                  <div class="single-form">
+                    <label>* Last NAME</label>
+                    <input type="text" name="" th:field="*{surname}" placeholder="Enter surname">
+                  </div>
+                </div>
+                <!-- Last Name -->
+                <!-- TC No -->
+                <div class="col-lg-12">
+                  <div class="single-form">
+                    <label>* Tc No</label>
+                    <input type="text" name="" th:field="*{tcNo}" placeholder="Enter Tc No">
+                  </div>
+                </div>
+                <!-- TC No -->
+                <!-- Phone Number -->
+                <div class="col-lg-12">
+                  <div class="single-form">
+                    <label>* Phone Number</label>
+                    <input type="text" name="" th:field="*{phone}" placeholder="Enter Number">
+                  </div>
+                </div>
+                <!-- Phone Number -->
+
+                <!-- Birthday  -->
+                <div class="col-lg-12">
+                  <div class="single-form">
+                    <label>* Dogum günü</label>
+                    <input type="date" th:field="*{birthday}" name="">
+                  </div>
+                </div>
+                <!-- Birthday -->
+                <!-- Salary -->
+                <div class="col-lg-12">
+                  <div class="single-form">
+                    <label>* Maaş</label>
+                    <input type="number" th:field="*{salary}" name="">
+                  </div>
+                </div>
+                <!-- Salary -->
+                <!-- Score -->
+                <div class="col-lg-6">
+                  <div class="single-form">
+                    <label>* Score</label>
+                    <input type="number" th:field="*{score}" name="">
+                  </div>
+                </div>
+                <!-- Score -->
+                <!-- Loan Amount -->
+                <div class="col-lg-6">
+                  <div class="single-form">
+                    <label>* Loan Amount</label>
+                    <input type="number" th:field="*{mortgage}" name="">
+                  </div>
+                </div>
+                <!-- Loan Amount -->
+              </div>
+              <!-- Form btn -->
+              <button class="btn apply-btn mt-30">
+                APPLY NOW
+              </button>
+            </form>
+            <!-- End From -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Apply Area End -->
+
+</main>
+<footer th:replace="/Home/Layout/homefragment :: footer">
+</footer>
+
+<div th:replace="/Home/Layout/homefragment :: scroll-up">
+</div>
+
+<div th:replace="/Home/Layout/homefragment :: home-script">
+</div>
+</body>
+</html>

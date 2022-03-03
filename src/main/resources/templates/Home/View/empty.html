@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<!--<html th:lang="${#locale.language}" xmlns:th="http://thymeleaf.org">-->
+<head th:replace="/Home/Layout/homefragment :: html_head (pageTitle='Index')" />
+<body>
+<div th:replace="/Home/Layout/homefragment :: preloader">
+</div>
+
+<header th:replace="/Home/Layout/homefragment :: header">
+</header>
+
+<main>
+    <div th:object="${loans_form}">
+        <div th:text="${name}"> </div>
+
+    </div>
+</main>
+<footer th:replace="/Home/Layout/homefragment :: footer">
+</footer>
+
+<div th:replace="/Home/Layout/homefragment :: scroll-up">
+</div>
+
+<div th:replace="/Home/Layout/homefragment :: home-script">
+</div>
+</body>
+</html>
