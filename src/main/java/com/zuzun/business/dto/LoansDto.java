@@ -13,5 +13,6 @@ public class LoansDto {
     private int id;
     private int accountId;
     private String type;
+    private Boolean approval;
     private LoansParameterModel loansParameterModel;
 }

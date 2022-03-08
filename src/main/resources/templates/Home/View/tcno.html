@@ -44,20 +44,13 @@
                             </div>
                             <!-- Form btn -->
                             <button class="btn apply-btn mt-30">
-                                APPLY NOW
+                                Başvuru Sorgula
                             </button>
 
                         </form>
                         <!-- End From -->
-<!--                        private String name;-->
-<!--                        private String surname;-->
-<!--                        private String tcNo;-->
-<!--                        private String phone;-->
-<!--                        private String birthday;-->
-<!--                        private Long salary;-->
-<!--                        private String type;-->
-<!--                        private int score;-->
-<!--                        private double mortgage;-->
+
+                        <div th:if="${loans_and_account.name != null}">
 
                         <!--name-->
                         <div class="row" style="padding-top: 50px;">
@@ -152,16 +145,18 @@
                             </div>
                         </div>
                         <!--mortgage-->
-<!--                        &lt;!&ndash;surname&ndash;&gt;-->
-<!--                        <div class="row" style="padding-top: 50px;">-->
-<!--                            <div class="col-lg-6">-->
-<!--                                <label>Soyadı</label>-->
-<!--                            </div>-->
-<!--                            <div class="col-lg-6">-->
-<!--                                <label th:text="${loans_and_account.surname}"> </label>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash;surname&ndash;&gt;-->
+                        <!--approval-->
+                        <div class="row" style="padding-top: 50px;">
+                            <div class="col-lg-6">
+                                <label>Onay: </label>
+                            </div>
+                            <div class="col-lg-6">
+                                <label th:text="${loans_and_account.approval}"> </label>
+                            </div>
+                        </div>
+                        <!--approval-->
+                        </div>
+
                     </div>
                 </div>
             </div>

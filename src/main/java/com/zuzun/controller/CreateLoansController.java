@@ -33,7 +33,7 @@ public class CreateLoansController {
         if(bindingResult.hasErrors()){
             log.error("Hata var");
             log.info(createLoansDto);
-            return "login";
+            return "./Home/View/loans";
         }
         loansService.sendAccountApi(createLoansDto);
         return "./Home/View/loans";

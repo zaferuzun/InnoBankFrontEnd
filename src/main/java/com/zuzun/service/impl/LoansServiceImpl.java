@@ -40,16 +40,21 @@ public class LoansServiceImpl implements ILoansService {
 
     @Override
     public String sendLoansApi(CreateLoansDto createLoansDto,int accountId) {
+        LoansParameterModel loansParameterModel= LoansParameterModel.builder()
+                        .accountSalary(createLoansDto.getSalary())
+                        .accountScore(createLoansDto.getScore())
+                        .build();
         LoansDto loansDto =LoansDto.builder()
-                .loansParameterModel
-                        (LoansParameterModel.builder()
-                                .accountSalary(createLoansDto.getSalary())
-                                .accountScore(createLoansDto.getScore())
-                                .mortgage(createLoansDto.getMortgage())
-                                .build())
                 .type(createLoansDto.getType())
                 .accountId(accountId)
                 .build();
+        if(createLoansDto.getMortgage()!=null && createLoansDto.getMortgage()!=0)
+            loansParameterModel.setMortgage(createLoansDto.getMortgage());
+        else
+            loansParameterModel.setMortgage(createLoansDto.getMortgage());
+
+        loansDto.setLoansParameterModel(loansParameterModel);
+
         LoansDto responseLoans = restTemplate.postForObject(baseUrl+"/loans/save", loansDto, LoansDto.class);
 
 
@@ -72,7 +77,10 @@ public class LoansServiceImpl implements ILoansService {
                 .tcNo(accountDto.getTcNo())
                 .type(loansDto.getType())
                 .build();
-
+        if(loansDto.getApproval())
+            createLoansDto.setApproval("Başarılı");
+        else
+            createLoansDto.setApproval("Başarısız");
         return createLoansDto;
     }
 

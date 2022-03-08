@@ -13,6 +13,6 @@ public class LoansParameterModel {
     //account information
     private double accountSalary;
     private int accountScore ;
-    private double mortgage;
+    private Long mortgage;
 
 }

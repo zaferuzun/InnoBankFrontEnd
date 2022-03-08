@@ -12,7 +12,7 @@
 
 <main>
   <!-- Header Start-->
-  <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center ">
+  <div class="hero-area2  slider-height2 hero-overly2 d-flex align-items-center " style="min-height: 300px !important;">
     <div class="container">
       <div class="row">
         <div class="col-xl-12">
@@ -25,7 +25,7 @@
   </div>
   <!--Header End -->
   <!-- Apply Area Start -->
-  <div class="apply-area pt-150 pb-150">
+  <div class="apply-area pt-75 pb-75">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -38,7 +38,7 @@
                   <div class="single-form">
                     <label>* Kredi Tipi </label>
                     <div class="select-option mb-10">
-                      <select name="select" id="select1"  th:field="*{type}">
+                      <select name="select" id="select1"  th:field="*{type}" onchange="LoansChange()">
                         <option th:value="'Personal'" th:text="Bireysel"></option>
                         <option th:value="'Car'" th:text="Araç"></option>
                       </select>
@@ -49,16 +49,18 @@
                 <!-- First Name -->
                 <div class="col-lg-6">
                   <div class="single-form">
-                    <label>* FIRST NAME</label>
+                    <label>* Adı</label>
                     <input type="text" name="" th:field="*{name}" placeholder="Enter name">
+                    <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
                   </div>
                 </div>
                 <!-- First Name -->
                 <!-- Last Name -->
                 <div class="col-lg-6">
                   <div class="single-form">
-                    <label>* Last NAME</label>
+                    <label>* Soyadı</label>
                     <input type="text" name="" th:field="*{surname}" placeholder="Enter surname">
+                    <div class="text-danger" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
                   </div>
                 </div>
                 <!-- Last Name -->
@@ -66,15 +68,17 @@
                 <div class="col-lg-12">
                   <div class="single-form">
                     <label>* Tc No</label>
-                    <input type="text" name="" th:field="*{tcNo}" placeholder="Enter Tc No">
+                    <input type="text" name="" th:field="*{tcNo}" placeholder="Enter Tc No" maxlength="11">
+                    <div class="text-danger" th:if="${#fields.hasErrors('tcNo')}" th:errors="*{tcNo}"></div>
                   </div>
                 </div>
                 <!-- TC No -->
                 <!-- Phone Number -->
                 <div class="col-lg-12">
                   <div class="single-form">
-                    <label>* Phone Number</label>
-                    <input type="text" name="" th:field="*{phone}" placeholder="Enter Number">
+                    <label>* Telefon Numarası</label>
+                    <input type="text" name="" th:field="*{phone}" placeholder="Enter Number" maxlength="11">
+                    <div class="text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
                   </div>
                 </div>
                 <!-- Phone Number -->
@@ -84,6 +88,7 @@
                   <div class="single-form">
                     <label>* Dogum günü</label>
                     <input type="date" th:field="*{birthday}" name="">
+                    <div class="text-danger" th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></div>
                   </div>
                 </div>
                 <!-- Birthday -->
@@ -92,21 +97,23 @@
                   <div class="single-form">
                     <label>* Maaş</label>
                     <input type="number" th:field="*{salary}" name="">
+                    <div class="text-danger" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div>
                   </div>
                 </div>
                 <!-- Salary -->
                 <!-- Score -->
                 <div class="col-lg-6">
                   <div class="single-form">
-                    <label>* Score</label>
+                    <label>* Kredi Skoru</label>
                     <input type="number" th:field="*{score}" name="">
+                    <div class="text-danger" th:if="${#fields.hasErrors('score')}" th:errors="*{score}"></div>
                   </div>
                 </div>
                 <!-- Score -->
                 <!-- Loan Amount -->
-                <div class="col-lg-6">
+                <div class="col-lg-6" id="mortgage" style="display : none;">
                   <div class="single-form">
-                    <label>* Loan Amount</label>
+                    <label>Kredi Tutarı</label>
                     <input type="number" th:field="*{mortgage}" name="">
                   </div>
                 </div>
@@ -114,7 +121,7 @@
               </div>
               <!-- Form btn -->
               <button class="btn apply-btn mt-30">
-                APPLY NOW
+                Başvur
               </button>
             </form>
             <!-- End From -->
@@ -135,5 +142,18 @@
 
 <div th:replace="/Home/Layout/homefragment :: home-script">
 </div>
+<script th:inline="javascript">
+
+  function LoansChange() {
+    var selectValue = document.getElementById("select1").value;
+    var mortgage = document.getElementById("mortgage");
+
+    if(selectValue!="Car")
+      mortgage.style.display = "none";
+    else
+      mortgage.style.display = "block";
+
+  }
+</script>
 </body>
 </html>
